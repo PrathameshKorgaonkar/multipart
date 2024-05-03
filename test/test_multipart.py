@@ -22,7 +22,8 @@ class TestHeaderParser(unittest.TestCase):
 
     def test_token_unquote(self):
         unquote = mp.header_unquote
-        self.assertEqual('foo', unquote('"foo"'))
+        #self.assertEqual('foo', unquote('"foo"'))
+        self.assertEqual('bar', unquote('"foo"'))
         self.assertEqual('foo"bar', unquote('"foo\\"bar"'))
         self.assertEqual('ie.exe', unquote('"\\\\network\\ie.exe"', True))
         self.assertEqual('ie.exe', unquote('"c:\\wondows\\ie.exe"', True))
